@@ -17,10 +17,6 @@ app.use(bodyParser.urlencoded({extended : true}));
 app.use('/products', products);
 app.use('/articles', articles);
 
-app.get('/',(req,res)=> {
-  res.render('index');
-});
-
 
 const server =  app.listen(PORT, ()=>{
   console.log(`Server listening on ${PORT}`);

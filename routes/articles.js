@@ -15,7 +15,6 @@ article.route('/')
 
 article.route('/:title')
 .put((req, res)=>{
-  console.log(req.params.title);
   req.body.title = req.params.title;
   Articles.editArticle(req.body);
   res.send({'success': true});

@@ -1,7 +1,11 @@
 extends ./layout.pug
+include ./mixins.pug
 
 block title
   title Homepage
 
 block body
   h1#header(style={color:"green"}) WELCOME TO THE HOMEPAGE
+
+  ul.products
+    +productList(result)
