@@ -4,6 +4,7 @@ const app = express();
 const PORT = 3000;
 const bodyParser = require ('body-parser');
 const products = require('./routes/products');
+const articles = require('./routes/articles');
 
 
 app.set('view engine', 'pug');
@@ -14,6 +15,11 @@ app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({extended : true}));
 
 app.use('/products', products);
+app.use('/articles', articles);
+
+app.get('/',(req,res)=> {
+  res.render('index');
+});
 
 
 const server =  app.listen(PORT, ()=>{
