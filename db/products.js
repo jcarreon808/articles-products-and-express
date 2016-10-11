@@ -10,7 +10,7 @@ function add (newProduct){
   };
   id++;
   productArray.push(productTemplate);
-  // console.log(productArray);
+
 }
 
 function all (){

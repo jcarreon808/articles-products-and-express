@@ -17,7 +17,26 @@ function all (){
   return articleArray;
 }
 
+function editArticle(data){
+  return articleArray = articleArray.map((element)=>{
+    if(element.title === data.title){
+      element.body = data.body;
+      element.author = data.author;
+
+    }
+    return element;
+  });
+}
+
+function deleteArticle(title){
+  return articleArray = articleArray.filter((element)=>{
+    return element.title !== title;
+  });
+}
+
 module.exports = {
   add,
   all,
-}
+  editArticle,
+  deleteArticle
+};
