@@ -3,7 +3,6 @@ let id = 1;
 
 function add(newArticle){
   let articleTemplate = {
-
     title: newArticle.title,
     body: newArticle.body,
     author: newArticle.author,
@@ -34,9 +33,18 @@ function deleteArticle(title){
   });
 }
 
+function getOneArticle(data){
+  return articleArray.find((element)=>{
+    if (element.title === data.title){
+      return element;
+    }
+  });
+}
+
 module.exports = {
   add,
   all,
   editArticle,
-  deleteArticle
+  deleteArticle,
+  getOneArticle
 };

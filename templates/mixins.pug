@@ -3,3 +3,10 @@ mixin productList(products)
     li#product #{product.name}
     li#product #{product.price}
     li#product #{product.inventory}
+
+mixin articleList(articles)
+  each article in articles
+    li#article #{article.title}
+    li#article #{article.body}
+    li#article #{article.author}
+

@@ -1,0 +1,20 @@
+extends ./layout.pug
+
+block title
+  title Homepage
+
+block body
+  if page == "Product Page"
+    h1#header(style={color:"green"}) Please Update Product
+    form(action="#" method="post")
+      input(placeholder=product.name name="name")
+      input(placeholder=product.price name="price")
+      input(placeholder=product.inventory name="inventory")
+      button#send Send
+  else
+    h1#header(style={color:"green"}) Please Update Article
+    form(action="#" method="post")
+      input(placeholder=article.title name="title")
+      input(placeholder=article.body name="body")
+      input(placeholder=article.author name="author")
+      button#send Send

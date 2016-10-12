@@ -34,9 +34,18 @@ function editProduct(data){
   });
 }
 
+function getOneProduct(data){
+  return productArray.find((element)=>{
+    if(element.id === parseFloat(data.id)){
+      return element;
+    }
+  });
+}
+
 module.exports = {
   add,
   all,
   deleteProduct,
-  editProduct
+  editProduct,
+  getOneProduct
 };

@@ -5,7 +5,13 @@ block title
   title Homepage
 
 block body
-  h1#header(style={color:"green"}) WELCOME TO THE HOMEPAGE
+  if page == "Product Page"
+    h1#header(style={color:"green"}) WELCOME TO THE Product HOMEPAGE
 
-  ul.products
-    +productList(result)
+    ul.products
+      +productList(result)
+  else
+    h1#header(style={color:"green"}) WELCOME TO THE Article HOMEPAGE
+
+    ul.products
+      +articleList(result)
