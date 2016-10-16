@@ -4,36 +4,51 @@ const article = express.Router();
 
 article.route('/')
 .get((req,res)=>{
-  let result = Articles.all();
-  res.render('index', {
-    result
+  Articles.all()
+  .then(result => {
+    res.render('index', {
+      result
+    });
   });
 })
 
 .post((req,res)=>{
-  Articles.add(req.body);
-  res.json({"success":true});
+  Articles.add(req.body)
+    .then(() => {
+      res.json({"success":true});
+    });
 });
 
 article.route('/:title')
 .put((req, res)=>{
   req.body.title = req.params.title;
-  Articles.editArticle(req.body);
-  res.send({'success': true});
+  Articles.editArticle(req.body)
+  .then(()=>{
+    res.send({'success': true});
+  });
 })
 .delete((req,res)=>{
-  Articles.deleteArticle(req.params.title);
-  res.json({"success":true});
+  Articles.deleteArticle(req.params.title)
+  .then(()=>{
+    res.json({"success":true});
+  });
 });
 
 article.route("/:title/edit")
 .post((req,res)=>{
   req.body.title = req.params.title;
-  Articles.editArticle(req.body);
+    Articles.editArticle(req.body)
+  .then(()=>{
+    res.send({'success': true});
+  });
 })
 .get((req,res)=>{
-  res.render('edit', {
-    article: Articles.getOneArticle(req.params)
+  req.body.title = req.params.title;
+  Articles.getOneArticle(req.body)
+  .then((article)=>{
+    res.render('edit', {
+      article: article[0]
+    });
   });
 });
 
@@ -42,7 +57,10 @@ article.route('/new')
   res.render('new');
 })
 .post((req, res)=>{
-  Articles.add(req.body);
+  Articles.add(req.body)
+    .then(() => {
+      res.json({"success":true});
+    });
 });
 
 module.exports = article;

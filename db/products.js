@@ -1,44 +1,49 @@
-let productArray = [];
+const db =require ('./connection');
+
+
+
 let id = 1;
 
 function add (newProduct){
   let productTemplate  = {
-    id : id,
     name: newProduct.name,
     price: newProduct.price,
     inventory: newProduct.inventory
   };
-  id++;
-  productArray.push(productTemplate);
+   return db.query('INSERT INTO products (name, price, inventory) VALUES (${name}, ${price}, ${inventory})',
+  productTemplate)
+   .catch(error=>{
+    console.error(error);
+  });
 
 }
 
 function all (){
- return productArray;
+  return db.query('SELECT * FROM products')
+  .catch(error=>{
+    console.error(error);
+  });
 }
 
 function deleteProduct(id){
-  return productArray = productArray.filter((element)=>{
-    return element.id !== parseFloat(id);
+  return db.query('DELETE FROM products WHERE id=\'$1#\'',id)
+  .catch(error=>{
+    console.error(error);
   });
 }
 
 function editProduct(data){
-  return productArray = productArray.map((element)=>{
-    if(element.id === parseFloat(data.id)){
-      element.name = data.name;
-      element.inventory= data.inventory;
-      element.price = data.price;
-    }
-    return element;
+  console.log(data);
+    return db.query('UPDATE products SET name=${name},price=${price}, inventory=${inventory} WHERE id=${id}', data)
+   .catch(error=>{
+    console.error(error);
   });
 }
 
 function getOneProduct(data){
-  return productArray.find((element)=>{
-    if(element.id === parseFloat(data.id)){
-      return element;
-    }
+  return db.query('SELECT * FROM products WHERE id=id', data)
+  .catch(error=>{
+    console.error(error);
   });
 }
 

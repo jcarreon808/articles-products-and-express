@@ -13,7 +13,10 @@ block body
       input(placeholder=price name="price")
       p Inventory
       input(placeholder=inventory name="inventory")
+      br
       button#send SEND
+      button#home
+        a(href="/products") Home
   else
     h1#header(style={color:"green"}) Enter New Article to Search
     form(action="#" method="post")
@@ -25,5 +28,7 @@ block body
       input(placeholder=inventory name="author")
       br
       button#send SEND
+      button#home
+        a(href="/articles") Home
 
 

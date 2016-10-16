@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/jcarreon808/articles-products-and-express#readme",
   "dependencies": {
+    "bluebird": "^3.4.6",
     "express": "^4.14.0",
+    "pg-promise": "^5.3.4",
     "pug": "^2.0.0-beta6"
   }
 }

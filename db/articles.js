@@ -1,4 +1,5 @@
-let articleArray =[];
+const db =require ('./connection');
+
 let id = 1;
 
 function add(newArticle){
@@ -6,38 +7,47 @@ function add(newArticle){
     title: newArticle.title,
     body: newArticle.body,
     author: newArticle.author,
-    urlTitle : encodeURI(newArticle.title)
+    url_title : encodeURI(newArticle.title)
 
   };
-  articleArray.push(articleTemplate);
+  return db.query('INSERT INTO articles (title, body, author, url_title) VALUES (${title}, ${body}, ${author}, ${url_title})',
+  articleTemplate)
+  // .then(success=>{
+
+  // })
+  .catch(error=>{
+    console.error(error);
+  });
+
 }
 
 function all (){
-  return articleArray;
+  return db.query('SELECT * FROM articles')
+  .catch(error=>{
+    console.error(error);
+  });
 }
 
 function editArticle(data){
-  return articleArray = articleArray.map((element)=>{
-    if(element.title === data.title){
-      element.body = data.body;
-      element.author = data.author;
-
-    }
-    return element;
+  return db.query('UPDATE articles SET body = ${body},author = ${author} WHERE title = ${title}', data)
+   .catch(error=>{
+    console.error(error);
   });
 }
 
 function deleteArticle(title){
-  return articleArray = articleArray.filter((element)=>{
-    return element.title !== title;
+  console.log(title);
+  return db.query('DELETE FROM articles WHERE title=\'$1#\'',title)
+  .catch(error=>{
+    console.error(error);
   });
+
 }
 
 function getOneArticle(data){
-  return articleArray.find((element)=>{
-    if (element.title === data.title){
-      return element;
-    }
+  return db.query('SELECT * FROM articles WHERE title=title', data)
+  .catch(error=>{
+    console.error(error);
   });
 }
 

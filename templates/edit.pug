@@ -10,11 +10,17 @@ block body
       input(placeholder=product.name name="name")
       input(placeholder=product.price name="price")
       input(placeholder=product.inventory name="inventory")
+      br
       button#send Send
+      button#home
+        a(href="/products") Home
   else
     h1#header(style={color:"green"}) Please Update Article
     form(action="#" method="post")
       input(placeholder=article.title name="title")
       input(placeholder=article.body name="body")
       input(placeholder=article.author name="author")
+      br
       button#send Send
+      button#home
+        a(href="/articles") Home

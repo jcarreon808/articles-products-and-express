@@ -1,12 +1,14 @@
 mixin productList(products)
   each product in products
-    li#product #{product.name}
-    li#product #{product.price}
-    li#product #{product.inventory}
+    div.product #{product.name}
+    div.product #{product.price}
+    div.product #{product.inventory}
+    br
 
 mixin articleList(articles)
   each article in articles
-    li#article #{article.title}
-    li#article #{article.body}
-    li#article #{article.author}
+    div.article #{article.title}
+    div.article #{article.body}
+    div.article #{article.author}
+    br
 
