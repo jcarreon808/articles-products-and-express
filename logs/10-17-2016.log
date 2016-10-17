@@ -1,0 +1,25 @@
+[Method]: GET
+  [URI]:
+  [Timestamp]:Mon Oct 17 2016 11:42:45 GMT-1000 (HST)
+
+  [Method]: GET
+  [URI]:favicon.ico
+  [Timestamp]:Mon Oct 17 2016 11:42:45 GMT-1000 (HST)
+
+  [Method]: GET
+  [URI]:articles
+  [Timestamp]:Mon Oct 17 2016 11:42:51 GMT-1000 (HST)
+
+  [Method]: GET
+  [URI]:styles.css
+  [Timestamp]:Mon Oct 17 2016 11:42:52 GMT-1000 (HST)
+
+  [Method]: GET
+  [URI]:articles/new
+  [Timestamp]:Mon Oct 17 2016 11:42:59 GMT-1000 (HST)
+
+  [Method]: GET
+  [URI]:styles.css
+  [Timestamp]:Mon Oct 17 2016 11:42:59 GMT-1000 (HST)
+
+  

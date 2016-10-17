@@ -1,9 +1,5 @@
 const db =require ('./connection');
 
-
-
-let id = 1;
-
 function add (newProduct){
   let productTemplate  = {
     name: newProduct.name,
@@ -25,14 +21,14 @@ function all (){
   });
 }
 
-function deleteProduct(id){
+function deleteProduct (id){
   return db.query('DELETE FROM products WHERE id=\'$1#\'',id)
   .catch(error=>{
     console.error(error);
   });
 }
 
-function editProduct(data){
+function editProduct (data){
   console.log(data);
     return db.query('UPDATE products SET name=${name},price=${price}, inventory=${inventory} WHERE id=${id}', data)
    .catch(error=>{
@@ -40,7 +36,7 @@ function editProduct(data){
   });
 }
 
-function getOneProduct(data){
+function getOneProduct (data){
   return db.query('SELECT * FROM products WHERE id=id', data)
   .catch(error=>{
     console.error(error);
