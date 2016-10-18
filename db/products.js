@@ -36,7 +36,7 @@ function editProduct (data){
 }
 
 function getOneProduct (data){
-  return db.query('SELECT * FROM products WHERE id=id', data)
+  return db.query('SELECT * FROM products WHERE id=$1', data)
   .catch(error=>{
     console.error(error);
   });

@@ -40,7 +40,7 @@ function deleteArticle (title){
 }
 
 function getOneArticle (data){
-  return db.query('SELECT * FROM articles WHERE title=title', data)
+  return db.query('SELECT * FROM articles WHERE title=${title}', data)
   .catch(error=>{
     console.error(error);
   });

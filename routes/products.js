@@ -38,14 +38,14 @@ product.route('/:id')
 
 product.route('/:id/edit')
 .post((req,res)=>{
-  req.body.id = parseInt(req.params.id);
+  req.body.id = (req.params.id);
   Products.editProduct(req.body)
     .then(()=>{
       res.json({"success":true});
     });
 })
 .get((req,res)=>{
-  Products.getOneProduct(req.params)
+  Products.getOneProduct(req.params.id)
   .then((products)=>{
     res.render('edit',{
       page: 'Product Page',

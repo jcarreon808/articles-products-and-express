@@ -1,9 +1,10 @@
 mixin productList(products)
   each product in products
-    div.product #{product.name}
-    div.product #{product.price}
-    div.product #{product.inventory}
-    br
+    div#box
+      div.product #{product.name}
+      div.product #{product.price}
+      div.product #{product.inventory}
+      br
 
 mixin articleList(articles)
   each article in articles
