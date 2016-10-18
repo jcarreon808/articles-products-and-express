@@ -38,7 +38,7 @@ product.route('/:id')
 
 product.route('/:id/edit')
 .post((req,res)=>{
-  eq.body.id = parseInt(req.params.id);
+  req.body.id = parseInt(req.params.id);
   Products.editProduct(req.body)
     .then(()=>{
       res.json({"success":true});
@@ -47,7 +47,6 @@ product.route('/:id/edit')
 .get((req,res)=>{
   Products.getOneProduct(req.params)
   .then((products)=>{
-    console.log(products);
     res.render('edit',{
       page: 'Product Page',
       product: products[0]

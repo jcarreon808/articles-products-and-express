@@ -29,7 +29,6 @@ function deleteProduct (id){
 }
 
 function editProduct (data){
-  console.log(data);
     return db.query('UPDATE products SET name=${name},price=${price}, inventory=${inventory} WHERE id=${id}', data)
    .catch(error=>{
     console.error(error);

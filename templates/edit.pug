@@ -6,21 +6,31 @@ block title
 block body
   if page == "Product Page"
     h1#header(style={color:"green"}) Please Update Product
-    form(action="#" method="post")
-      input(placeholder=product.name name="name")
-      input(placeholder=product.price name="price")
-      input(placeholder=product.inventory name="inventory")
-      br
-      button#send Send
-      button#home
-        a(href="/products") Home
+    div#mainContainer
+        form(action="#" method="post")
+          p Product Name
+          input(placeholder=product.name name="name")
+          p Product Price
+          input(placeholder=product.price name="price")
+          p Product Inventory
+          input(placeholder=product.inventory name="inventory")
+          br
+          button#send SEND
+          br
+          button#home
+            a(href="/products") HOME
   else
     h1#header(style={color:"green"}) Please Update Article
-    form(action="#" method="post")
-      input(placeholder=article.title name="title")
-      input(placeholder=article.body name="body")
-      input(placeholder=article.author name="author")
-      br
-      button#send Send
-      button#home
-        a(href="/articles") Home
+    div#mainContainer
+        form(action="#" method="post")
+          p Article Name
+          input(placeholder=article.title name="title")
+          p Article Body
+          input(placeholder=article.body name="body")
+          p Article Authro
+          input(placeholder=article.author name="author")
+          br
+          button#send Send
+          br
+          button#home
+            a(href="/articles") Home

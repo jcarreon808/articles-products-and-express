@@ -6,29 +6,31 @@ block title
 block body
   if page == 'Product Page'
     h1#header(style={color:"green"}) Enter New Product to Search
-    form(action="#" method="post")
-      p Name
-      input(placeholder=name name="name")
-      p Price
-      input(placeholder=price name="price")
-      p Inventory
-      input(placeholder=inventory name="inventory")
-      br
-      button#send SEND
-      button#home
-        a(href="/products") Home
+    div#mainContainer
+      form(action="#" method="post")
+        p Name
+        input(placeholder=name name="name")
+        p Price
+        input(placeholder=price name="price")
+        p Inventory
+        input(placeholder=inventory name="inventory")
+        br
+        button#send SEND
+        button#home
+          a(href="/products") Home
   else
     h1#header(style={color:"green"}) Enter New Article to Search
-    form(action="#" method="post")
-      p Title
-      input(placeholder=name name="title")
-      p Body
-      input(placeholder=price name="body")
-      p Author
-      input(placeholder=inventory name="author")
-      br
-      button#send SEND
-      button#home
-        a(href="/articles") Home
+    div#mainContainer
+      form(action="#" method="post")
+        p Title
+        input(placeholder=name name="title")
+        p Body
+        input(placeholder=price name="body")
+        p Author
+        input(placeholder=inventory name="author")
+        br
+        button#send SEND
+        button#home
+          a(href="/articles") Home
 
 

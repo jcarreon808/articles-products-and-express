@@ -2,8 +2,29 @@ body{
   background-color: lightgreen;
 }
 
-#articleContainer{
+h1{
+  text-align: center;
+}
+
+#mainContainer{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+#container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+form{
+  text-align: center;
+  display:flex;
+  flex-flow: column;
+  justify-content: center;
   border: 1px solid black;
   border-radius: 5px;
-  margin-top: 10px;
+  margin: 10px;
+  width: 200px;
 }
